@@ -33,4 +33,8 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'images': [
+        'static/description/banner.png',
+        'static/description/cover.png',
+    ]
 }
