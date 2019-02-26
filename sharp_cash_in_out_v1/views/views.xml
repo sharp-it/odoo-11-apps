@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="sharp_account_view_bank_statement_form">
+      <field name="name">sharp.account.view.bank.statement.form</field>
+      <field name="model">account.bank.statement</field>
+      <field name="inherit_id" ref="account.view_bank_statement_form"></field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <xpath expr="/form/sheet/notebook/page/field[@name='line_ids']/tree/field[@name='amount']" position="after">
+          <field name="move_type" widget="radio" options="{'horizontal': True}"/>
+          <field name="move_amount"/>
+        </xpath>
+        <xpath expr="/form/sheet/notebook/page/field[@name='line_ids']/tree/field[@name='amount']" position="attributes">
+          <attribute name="invisible">True</attribute>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
