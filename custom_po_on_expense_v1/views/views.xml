@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="custom_po_on_expense_form">
+      <field name="name">custom.po.on.expense.form</field>
+      <field name="model">hr.expense</field>
+      <field name="inherit_id" ref="hr_expense.hr_expense_form_view"></field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <xpath expr="//form/sheet/group/group[2]/field[@name='account_id']" position="after">
+          <field name="po_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('state', '=', 'purchase')]"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="custom_po_on_cash_form">
+      <field name="name">custom.po.on.cash.form</field>
+      <field name="model">account.bank.statement</field>
+      <field name="inherit_id" ref="account.view_bank_statement_form"/>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <xpath expr="/form/sheet/notebook/page/field[@name='line_ids']/tree/field[@name='date']" position="after">
+          <field name="po_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('state', '=', 'purchase')]"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
